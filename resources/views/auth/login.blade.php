@@ -57,7 +57,6 @@ Inicia Sesión en FlexiPackets
                 <div class="mb-5">
                     <input type="checkbox" name="remember"> <label class="text-gray-500 text-sm">Mantener mi sesion abierta</label>
                 </div>
-             
                 <input
                     type="submit"
                     value="Iniciar Sesión"

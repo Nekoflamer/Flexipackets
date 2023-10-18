@@ -7,7 +7,7 @@ Inicia Sesión en FlexiPackets
 @section('contenido')
     <div class="md:flex md:justify-center md:gap-8 md:items-center ">
         <div class="md:w-6/12 p-5">
-            <img src="{{ asset('img/login.jpg') }}" alt="Imagen login de usuario">
+            <img class="rounded-xl" src="{{ asset('img/login.jpg') }}" alt="Imagen login de usuario">
         </div>
 
         <div class="md:w-4/12 bg-white p-6 rounded-lg shadow-xl">

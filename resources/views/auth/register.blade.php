@@ -6,8 +6,8 @@ Regístrate en FlexiPackets
 
 @section('contenido')
     <div class="md:flex md:justify-center md:gap-8 md:items-center ">
-        <div class="md:w-6/12 p-5">
-            <img src="{{ asset('img/registrar.jpg') }}" alt="Imagen registro de usuario">
+        <div class="md:w-6/12 p-5 rounded-lg">
+            <img class="rounded-xl" src="{{ asset('img/registrar.jpg') }}" alt="Imagen registro de usuario">
         </div>
 
         <div class="md:w-4/12 bg-white p-6 rounded-lg shadow-xl">
@@ -24,7 +24,7 @@ Regístrate en FlexiPackets
                         placeholder="Tu nombre"
                         class="border p-3 w-full rounded-lg"
                     />
-
+                    
                     @error('name')
                         <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>
                     @enderror
@@ -43,6 +43,40 @@ Regístrate en FlexiPackets
                         value="{{ old('username') }}"
                     />
                     @error('username')
+                    <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>
+                    @enderror
+                </div>
+                <div class="mb-5">
+                    <label for="address" class="mb-2 block uppercase text-gray-500 font-bold">
+                        Tu direccion
+                    </label>
+                    <input
+                        id="address"
+                        name="address"
+                        type="text"
+                        placeholder="Tu Direccion"
+                        class="border p-3 w-full rounded-lg @error('direccion') border-red-500
+                        @enderror"
+                        value="{{ old('direccion') }}"
+                    />
+                    @error('address')
+                    <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>
+                    @enderror
+                </div>
+                <div class="mb-5">
+                    <label for="phone" class="mb-2 block uppercase text-gray-500 font-bold">
+                        Tu número de telefono
+                    </label>
+                    <input
+                        id="phone"
+                        name="phone"
+                        type="text"
+                        placeholder="Ingresa tu número de telefono"
+                        class="border p-3 w-full rounded-lg @error('direccion') border-red-500
+                        @enderror"
+                        value="{{ old('phone') }}"
+                    />
+                    @error('phone')
                     <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>
                     @enderror
                 </div>

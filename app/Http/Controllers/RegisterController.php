@@ -27,23 +27,32 @@ class RegisterController extends Controller
         $this->validate($request, [
             'name' => 'required',
             'username' => 'required|min:8|max:16|unique:users',
+            'address' => 'required',
+            'phone' => 'required|unique:users',
             'email' => 'required|unique:users|email|max:60',
-            'password' => 'required|confirmed|min:8',
+            'password' => 'required|confirmed',
 
         ]);
 
         User::create([
             'name' => $request->name,
             'username' => Str::slug($request->username),
+            'address' => $request->address,
+            'phone' => $request->phone,
             'email' => $request->email,
             'password' => Hash::make($request->password),
         ]);
 
         //autenticar
-        auth()->attempt([
-            'email' => $request->email,
-            'password' => $request->password,
-        ]);
+        //auth()->attempt([
+        //     'email' => $request->email,
+        //    'password' => $request->password,
+        // ]);
+
+        //
+        auth()->attempt($request->only('email', 'password'));
+
+
         //redireccionar
         return redirect()->route('posts.index');
     }
